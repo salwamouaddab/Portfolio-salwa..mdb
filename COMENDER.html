@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Arenasstore</title>
+  <link rel="stylesheet" href="comender.CSS">
+</head>
+<body>
+
+<div class="container">
+
+  <header class="top">
+    <h2>arenasstore</h2>
+    <div class="resume">
+      <span>Résumé de la commande</span>
+     
+    </div>
+  </header>
+
+  <!-- CONTACT -->
+  <section>
+    <div class="section-title">
+      <h3>Contact</h3>
+      <a href="#">Se connecter</a>
+    </div>
+    <input type="text" placeholder="E-mail ou numéro de portable">
+  </section>
+
+  <!-- LIVRAISON -->
+  <section>
+    <h3>Livraison</h3>
+
+    <input type="text" id="prenom" placeholder="Prénom">
+<div class="error-message" id="err-prenom"></div>
+
+<input type="text" id="nom" placeholder="Nom">
+<div class="error-message" id="err-nom"></div>
+
+<input type="text" id="ville" placeholder="Ville">
+<div class="error-message" id="err-ville"></div>
+
+<input type="tel" id="tel" placeholder="Téléphone">
+<div class="error-message" id="err-tel"></div>
+    <label class="checkbox">
+      <input type="checkbox">
+      Sauvegarder mes coordonnées pour la prochaine fois
+    </label>
+  </section>
+
+  <!-- MODE EXPEDITION -->
+  <section>
+    <h3>Mode d’expédition</h3>
+
+    <label class="radio active">
+      <input type="radio" name="ship" checked>
+      <span>CASA</span>
+      <strong>19,00 MAD</strong>
+    </label>
+
+    <label class="radio">
+      <input type="radio" name="ship">
+      <span>HORS CASA</span>
+      <strong>35,00 MAD</strong>
+    </label>
+  </section>
+
+  <!-- PAIEMENT -->
+  
+
+  <!-- FACTURATION -->
+  <section>
+    <h3>Adresse de facturation</h3>
+
+    <label class="radio active">
+      <input type="radio" name="bill" checked>
+      Identique à l’adresse de livraison
+    </label>
+
+    <label class="radio">
+      <input type="radio" name="bill">
+      Utiliser une adresse de facturation différente
+    </label>
+  </section>
+
+  <!-- TOTAL -->
+  <section class="total">
+    <div>
+      <strong>Total</strong>
+      <span>1 article</span>
+    </div>
+   
+  </section>
+
+  <button class="btn" onclick="validateForm()"><a href="espec.html"> Valider le paiement</a></button>
+  <footer>
+    Tous droits réservés arenasstore
+  </footer>
+
+</div>
+<script>
+function validateForm() {
+  let valid = true;
+
+  const fields = [
+    { id: "prenom", error: "err-prenom", msg: "Champ obligatoire" },
+    { id: "nom", error: "err-nom", msg: "Champ obligatoire" },
+    { id: "ville", error: "err-ville", msg: "Entrez une ville" },
+    { id: "tel", error: "err-tel", msg: "Saisir un numéro de téléphone" }
+  ];
+
+  fields.forEach(f => {
+    const input = document.getElementById(f.id);
+    const error = document.getElementById(f.error);
+
+    if (!input.value.trim()) {
+      input.classList.add("error");
+      error.textContent = f.msg;
+      valid = false;
+    } else {
+      input.classList.remove("error");
+      error.textContent = "";
+    }
+  });
+
+  if (valid) {
+    alert("Paiement validé ✅");
+  }
+}
+</script>
+
+</body>
+</html>

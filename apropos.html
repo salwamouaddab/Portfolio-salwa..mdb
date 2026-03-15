@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Bijouterie Salwa</title>
+</head>
+<style>
+
+    * {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f8f8f8;
+}
+
+/* Hero */
+.about-hero {
+  background-color: #f3efe9;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.about-hero h1 {
+  margin: 0;
+  font-size: 42px;
+  letter-spacing: 2px;
+}
+
+.about-hero p {
+  margin-top: 10px;
+  color: #777;
+}
+
+/* Content */
+.about-content {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-text h2 {
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.about-text span {
+  color: #b89b5e;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.about-text p {
+  margin-top: 20px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.about-text strong {
+  display: block;
+  margin-top: 25px;
+  font-size: 16px;
+}
+
+/* Images */
+.about-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.about-images img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
+}
+
+.about-images img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero h1 {
+    font-size: 32px;
+  }
+}
+.about-icons {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.icon-box {
+  background: #ffffff;
+  padding: 40px 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.icon-box span {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.icon-box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #2c2c2c;
+}
+
+.icon-box p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.icon-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-icons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .about-icons {
+    grid-template-columns: 1fr;
+  }
+}
+.about-images {
+  max-width: 500px;
+  margin: auto;
+}
+</style>
+<body>
+
+<section class="about-hero">
+  <h1>About Us</h1>
+  <p>Accueil › About Us</p>
+</section>
+
+<section class="about-content">
+  <div class="about-text">
+    <h2>Bijouterie Salwa</h2>
+    <span>Élégance & Raffinement</span>
+
+    <p>
+      Bijouterie Salwa est une boutique spécialisée dans les bijoux féminins,
+      alliant élégance, modernité et qualité. Chaque pièce est soigneusement
+      sélectionnée pour sublimer votre style au quotidien ou lors de vos
+      occasions spéciales.
+    </p>
+
+    <p>
+      Nous proposons une collection raffinée de colliers, bagues, bracelets
+      et boucles d’oreilles, avec une attention particulière portée aux détails
+      et à l’accessibilité des prix.
+    </p>
+
+    <p>
+      Notre objectif est de vous offrir une expérience d’achat 100% en ligne,
+      simple, sécurisée et agréable, accompagnée d’un service client réactif
+      et d’une livraison rapide partout au Maroc.
+    </p>
+
+    <strong>✨ Bijouterie Salwa – Parce que l’élégance commence par un bijou.</strong>
+  </div>
+
+ <div class="about-images">
+  <img src="https://i.pinimg.com/736x/e0/8b/64/e08b642c01a24cefecb5f15275a7c496.jpg" alt="Bijouterie Salwa">
+</div>
+</section>
+<section class="about-icons">
+  <div class="icon-box">
+    <span>💎</span>
+    <h3>Qualité Premium</h3>
+    <p>Bijoux soigneusement sélectionnés avec une finition élégante.</p>
+  </div>
+
+  <div class="icon-box">
+    <span>🚚</span>
+    <h3>Livraison Rapide</h3>
+    <p>Livraison partout au Maroc dans les meilleurs délais.</p>
+  </div>
+
+  <div class="icon-box">
+    <span>📞</span>
+    <h3>Service Client</h3>
+    <p>Une équipe à votre écoute pour vous accompagner.</p>
+  </div>
+
+  <div class="icon-box">
+    <span>✨</span>
+    <h3>Style Intemporel</h3>
+    <p>Des bijoux modernes et raffinés pour chaque occasion.</p>
+  </div>
+</section>
+
+</body>
+</html>
