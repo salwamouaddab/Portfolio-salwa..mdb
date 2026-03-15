@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact · Arenasstore (exemple)</title>
+  <style>
+    :root{
+      --max-w: 900px;
+      --accent: #111; /* bouton noir */
+      --muted: #7a7a7a;
+      --border: #d6d6d6;
+      --bg: #fff;
+      --radius: 3px;
+      --gap: 18px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body{
+      margin:0;
+      background: #fafafa;
+      color:#111;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    .container{
+      max-width: var(--max-w);
+      margin: 28px auto;
+      padding: 18px;
+      background: var(--bg);
+    }
+
+    header.topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding: 8px 0 22px;
+    }
+    .brand{
+      font-size:22px;
+      letter-spacing:1px;
+      color: #222;
+    }
+
+    h1.page-title{
+      font-size:42px;
+      margin: 6px 0 26px;
+      font-weight:500;
+    }
+
+    form.contact-form{
+      display:flex;
+      flex-direction:column;
+      gap: var(--gap);
+    }
+
+    .field{
+      display:block;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea{
+      width:100%;
+      box-sizing: border-box;
+      padding: 16px;
+      border: 2px solid var(--border);
+      border-radius: 4px;
+      font-size:16px;
+      outline: none;
+      transition: border-color .15s, box-shadow .15s;
+      background: #fff;
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder{
+      color: #999;
+    }
+
+    input:focus,
+    textarea:focus{
+      border-color: #999;
+      box-shadow: 0 0 0 4px rgba(0,0,0,0.02);
+    }
+
+    .btn-row{
+      margin-top: 6px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    button.send{
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-weight:600;
+      letter-spacing:.2px;
+    }
+
+    button.send:active{ transform: translateY(1px); }
+
+    /* subscribe area */
+    .subscribe {
+      margin-top: 44px;
+      text-align:center;
+      padding: 34px 16px;
+      border-top: 1px solid #eee;
+    }
+    .subscribe h3{
+      margin:0 0 14px;
+      color: #444;
+      font-weight:500;
+      font-size:18px;
+    }
+    .subscribe .subwrap{
+      max-width:480px;
+      margin: 0 auto;
+      display:flex;
+      gap:8px;
+    }
+    .subscribe input[type="email"]{
+      padding: 12px 14px;
+      border: 2px solid var(--border);
+      border-radius: 3px;
+      flex:1;
+      font-size:16px;
+    }
+    .subscribe button {
+      border: 2px solid var(--border);
+      background: transparent;
+      padding: 10px 14px;
+      border-radius: 3px;
+      cursor:pointer;
+      font-size:18px;
+    }
+
+    footer{
+      margin-top: 30px;
+      padding: 18px 0 40px;
+      color: var(--muted);
+      text-align:center;
+      font-size:13px;
+    }
+
+    /* floating whatsapp button */
+    .whatsapp-fab{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width:56px;
+      height:56px;
+      border-radius: 50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(180deg,#18a54a,#0b8f3b);
+      box-shadow: 0 6px 18px rgba(11, 130, 62, .25);
+      z-index: 9999;
+    }
+    .whatsapp-fab a{
+      display:block;
+      width:100%;
+      height:100%;
+      text-decoration:none;
+      color:#fff;
+      font-weight:700;
+      font-size:22px;
+      line-height:56px;
+    }
+
+    /* responsive */
+    @media (max-width:520px){
+      h1.page-title{ font-size:34px; }
+      .container{ margin: 12px; padding: 12px; }
+      .subscribe .subwrap{ flex-direction:column; gap:10px; }
+      .whatsapp-fab{ width:50px; height:50px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header class="topbar" aria-label="site header">
+      <div class="brand">arenasstore</div>
+      <nav aria-label="main menu">
+        <!-- ici tu peux mettre icone menu / recherche -->
+      </nav>
+    </header>
+
+    <h1 class="page-title">Contact</h1>
+
+    <form class="contact-form" action="#" method="post" novalidate>
+      <label class="field" for="name">
+        <input id="name" name="name" type="text" placeholder="Nom" autocomplete="name" />
+      </label>
+
+      <label class="field" for="email">
+        <input id="email" name="email" type="email" placeholder="E-mail *" required autocomplete="email" />
+      </label>
+
+      <label class="field" for="phone">
+        <input id="phone" name="phone" type="tel" placeholder="Numéro de téléphone" autocomplete="tel" />
+      </label>
+
+      <label class="field" for="message">
+        <textarea id="message" name="message" rows="6" placeholder="Commentaire"></textarea>
+      </label>
+
+      <div class="btn-row">
+        <button type="submit" class="send" aria-label="Envoyer le message">Envoyer</button>
+      </div>
+    </form>
+
+    <section class="subscribe" aria-label="subscribe">
+      <h3>Subscribe to our emails</h3>
+      <form class="subwrap" action="#" method="post" onsubmit="event.preventDefault(); alert('Merci — vous êtes inscrit(e)')">
+        <input type="email" name="newsletter" placeholder="E-mail" required />
+        <button type="submit" aria-label="S'abonner">→</button>
+      </form>
+    </section>
+
+    <footer>
+      © 2025, arenasstore Commerce électronique propulsé par Shopify
+    </footer>
+  </div>
+
+  <!-- WhatsApp floating button (change number) -->
+  <div class="whatsapp-fab" aria-hidden="false">
+    <a href="https://wa.me/212600000000" target="_blank" rel="noopener noreferrer" title="Contact via WhatsApp">💬</a>
+  </div>
+
+</body>
+</html>
