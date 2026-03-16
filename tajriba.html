@@ -1,234 +1,184 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bijouterie Saloua - Excellence en Or</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos | Bijouterie Saloua</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --black: #000;
+            --white: #fff;
+            --bordeaux: #A01633; /* Lon l'bordeaux dyal la nappe exacte! 🍷 */
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-:root {
-  --black: #111;
-  --white: #fff;
-  --red-dark: #5a1111;
-  --red-footer: #541c1c;
-}
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+        /* Navbar Bordeaux (Nefs lon l'crown nape) */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 50px;
+            z-index: 100;
+            background-color: var(--bordeaux);
+        }
 
-body {
-  font-family: Montserrat, system-ui, Arial, sans-serif;
-  color: black;
-  margin: 0;
-}
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
 
-/* Navbar */
-nav {
-  background-color: rgba(93, 4, 4, 0.95); /* Légèrement plus opaque pour la lisibilité */
-  position: fixed;
-  width: 100%;
-  z-index: 10;
-}
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
 
-nav ul {
-  display: flex;
-  list-style: none;
-  justify-content: center; /* Centre les liens de navigation */
-}
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
 
-nav ul li a {
-  display: block;
-  padding: 18px 25px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 14px;
-  transition: 0.3s;
-}
+        /* Content Section */
+        .content-section {
+            margin-top: 150px;
+            padding: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            min-height: 80vh;
+        }
 
-nav ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+        }
 
-/* Hero Section avec Image de Fond */
-.wrap {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Toute la hauteur de l'écran */
-  
-  /* C'EST ICI QUE TOUT SE PASSE POUR L'IMAGE */
-  background-image: url('crown.png'); /* Le nom de ton image */
-  background-size: cover; /* Couvre tout l'espace proprement */
-  background-position: center; /* Centre l'image */
-  background-repeat: no-repeat;
-  
-  display: flex; /* Aide à centrer le texte */
-  justify-content: center;
-  align-items: center;
-}
+        .about-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 60px;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
 
-/* Overlay sombre pour faire ressortir le texte sur l'image */
-.wrap::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3); /* Un voile noir léger */
-}
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.8;
+            font-weight: 300;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
 
-/* Overlay content (Texte centré) */
-.label {
-  position: relative;
-  z-index: 1; /* Passe au-dessus de l'overlay sombre */
-  text-align: center;
-  color: white;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
-}
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            border: 2px solid var(--bordeaux); /* Cadre bordeaux */
+            padding: 15px;
+        }
 
-.label .block {
-  font-size: 45px;
-  font-weight: 300;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
+        .about-image img {
+            width: 100%;
+            height: auto;
+        }
 
-.label .small {
-  font-size: 60px; /* Plus grand pour l'élégance */
-  font-weight: 800;
-  color: var(--white);
-  margin-top: 10px;
-}
+        /* Footer Bordeaux (Nefs lon l'Nav) */
+        .footer {
+            background-color: var(--bordeaux);
+            color: white;
+            padding: 60px 40px;
+            margin-top: 50px;
+        }
 
-/* Button DECOUVRIR */
-.label a {
-  display: inline-block;
-  margin-top: 40px;
-  padding: 15px 40px;
-  background: transparent;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 0; /* Bords carrés pour le luxe */
-  border: 2px solid white; /* Un bouton contour */
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  transition: 0.4s;
-}
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.label a:hover {
-  background: white;
-  color: var(--black);
-  text-shadow: none;
-}
+        .footer-col h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
 
-/* Footer (Simplifié et propre) */
-.footer {
-  background: var(--red-footer);
-  color: white;
-  padding: 80px 40px;
-  text-align: center;
-}
-
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 50px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-col h3 {
-  margin-bottom: 25px;
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.footer-col p {
-  font-weight: 300;
-  line-height: 1.6;
-  font-size: 15px;
-}
-
-.footer-col ul {
-  list-style: none;
-}
-
-.footer-col ul li {
-  margin-bottom: 15px;
-}
-
-.footer-col ul li a {
-  color: rgba(255,255,255,0.8);
-  text-decoration: none;
-  font-size: 15px;
-}
-
-.footer-col ul li a:hover {
-  color: white;
-  text-decoration: underline;
-}
-
-.copyright {
-  margin-top: 60px;
-  font-size: 13px;
-  color: rgba(255,255,255,0.5);
-}
-
-</style>
+        .footer-col p, .footer-col a {
+            font-size: 14px;
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+        }
+    </style>
 </head>
-
 <body>
 
-<nav>
-  <ul>
-    <li><a href="tajriba.html">Accueil</a></li>
-    <li><a href="apropos.html">À propos</a></li>
-    <li><a href="decouvrir.html">Services</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+    <header>
+        <div class="logo">BIJOUTERIE SALOUA</div>
+        <nav>
+            <ul>
+                <li><a href="tajriba.html">ACCUEIL</a></li>
+                <li><a href="apropos.html">À PROPOS</a></li>
+                <li><a href="decouvrir.html">SERVICES</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="wrap">
-  <div class="label">
-    <div class="block">Chez</div>
-    <div class="block small">Bijouterie Saloua</div>
-    <a href="decouvrir.html">DECOUVRIR</a>
-  </div>
-</div>
+    <section class="content-section">
+        <div class="about-text">
+            <h1>NOTRE <br> HISTOIRE</h1>
+            <p>
+                Bienvenue dans l'univers de la <strong>Bijouterie Saloua</strong>. Passionnés par l'éclat et l'excellence, nous sélectionnons pour vous les pièces les plus raffinées en Or 18 carats.
+            </p>
+            <p>
+                Chaque bijou raconte une histoire, chaque éclat reflète une émotion. Nous allions tradition et modernité pour sublimer votre quotidien.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="c:\Users\PC\Downloads\WhatsApp Image 2026-03-16 at 16.05.24.jpeg" alt="Bijoux de luxe">
+        </div>
+    </section>
 
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-col">
-      <h3>Qui Sommes-Nous</h3>
-      <p>
-        Bienvenue à Bijouterie Saloua, votre univers de bijoux de luxe.
-        Nous renouvelons nos collections en Or 18 Carats selon les dernières tendances mondiales.
-      </p>
-    </div>
-
-    <div class="footer-col">
-      <h3>Liens Utiles</h3>
-      <ul>
-        <li><a href="#">Recherche</a></li>
-        <li><a href="#">Conditions Générales</a></li>
-        <li><a href="#">Mentions Légales</a></li>
-      </ul>
-    </div>
-  </div>
-  
-  <div class="copyright">
-    &copy; 2024 Bijouterie Saloua. Tous droits réservés.
-  </div>
-</footer>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Qui Sommes-Nous</h3>
+                <p>Votre univers de bijoux de luxe au Maroc. Excellence et authenticité.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>Email: contact@saloua-bijoux.com</p>
+                <p>Maroc</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
