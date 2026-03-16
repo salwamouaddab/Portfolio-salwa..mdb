@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Produit — Exemple</title>
+<link rel="stylesheet" href="bijo1.css">
+<body>
+
+  <div class="container" role="main">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="tajriba.html">Accueil</a> › <a href="coulier.html">Tous les produits</a> › <strong>modern</strong>
+    </nav>
+
+    <!-- GALERIE -->
+    <div class="gallery" aria-label="Galerie produit">
+      <div class="main-img" id="mainImageWrap">
+        <!-- change src below pour utiliser ta photo -->
+        <img id="mainImage" src="https://ania.ma/wp-content/uploads/2023/04/braclet_serpent_acier_inoxydable.jpg.webp" alt=""></a>
+      </div> 
+            <p>2200 MAD</p>
+
+    </div>
+
+    <!-- INFOS -->
+    <div class="info">
+      <h1 class="title">modern</h1>
+      <div class="meta">PRIMEUR • SKU: 1002051 • <span style="color:#08842d">★ 0 avis</span></div>
+
+      <div class="price-row">
+        <div>
+          <div class="price"> <small>80000 MAD</small></div>
+          <div class="notes">Taxes incluses — Frais de port calculés au paiement</div>
+        </div>
+      </div>
+
+      <div class="qty-area" aria-label="Choisir la quantité">
+        <label for="qty" style="min-width:80px; font-weight:600;">Quantité :</label>
+
+        <div class="qty-controls" role="group" aria-label="Contrôles quantité">
+          <button type="button" id="minus" aria-label="Diminuer quantité">−</button>
+          <input id="qty" type="number" min="1" value="1" aria-live="polite" />
+          <button type="button" id="plus" aria-label="Augmenter quantité">+</button>
+        </div>
+      </div>
+
+      <div>
+        <button class="add-btn" id="addToCart">Ajouter au panier</button>
+     <a href="COMENDER.html"><button class="add-btn" id="addToCart">Commander</button></a> 
+
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+        <div class="socials" aria-hidden="false">
+          <button title="Partager sur Facebook">f</button>
+          <button title="Partager sur Pinterest">p</button>
+          <button title="Partager par e-mail">✉</button>
+        </div>
+        <div class="meta" style="text-align:right;">Livraison: <strong>48-72h</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // changer l'image principale depuis les miniatures
+    function swapImage(src){
+      document.getElementById('mainImage').src = src;
+    }
+
+    // quantité +/- logique simple
+    const minus = document.getElementById('minus');
+    const plus = document.getElementById('plus');
+    const qtyInput = document.getElementById('qty');
+
+    minus.addEventListener('click', () => {
+      let v = parseInt(qtyInput.value || '1', 10);
+      if (v > 1) qtyInput.value = v - 1;
+    });
+
+    plus.addEventListener('click', () => {
+      let v = parseInt(qtyInput.value || '1', 10);
+      qtyInput.value = v + 1;
+    });
+
+    // "Ajouter au panier" (exemple : affiche alerte, ici tu peux connecter ton API)
+    document.getElementById('addToCart').addEventListener('click', () => {
+      const qty = parseInt(qtyInput.value || '1', 10);
+      const title = document.querySelector('.title').textContent.trim();
+      const priceText = document.querySelector('.price').textContent.trim();
+      alert(`${qty} x ${title} ajouté(s) au panier.\nPrix unitaire: ${priceText} dh`);
+      // Ici: appel fetch() pour ajouter au panier de ton backend si tu en as un
+    });
+
+    // petite sécurité : ne pas saisir < 1
+    qtyInput.addEventListener('input', () => {
+      if (!qtyInput.value || Number(qtyInput.value) < 1) qtyInput.value = 1;
+    });
+  </script>
+</body>
+</html>
