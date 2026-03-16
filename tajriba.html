@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bijouterie Saloua</title>
+<title>Bijouterie Saloua - Excellence en Or</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
 
@@ -21,7 +21,7 @@
   padding: 0;
 }
 
-body{
+body {
   font-family: Montserrat, system-ui, Arial, sans-serif;
   color: black;
   margin: 0;
@@ -29,107 +29,133 @@ body{
 
 /* Navbar */
 nav {
-  background-color: rgba(93, 4, 4, 0.9); /* شوية شفافية باش يبان الفيديو تحته */
+  background-color: rgba(93, 4, 4, 0.95); /* Légèrement plus opaque pour la lisibilité */
   position: fixed;
   width: 100%;
-  z-index: 2;
+  z-index: 10;
 }
 
 nav ul {
   display: flex;
   list-style: none;
-}
-
-nav ul li {
-  margin: 0;
+  justify-content: center; /* Centre les liens de navigation */
 }
 
 nav ul li a {
   display: block;
-  padding: 14px 20px;
+  padding: 18px 25px;
   color: white;
   text-decoration: none;
   font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: 0.3s;
 }
 
 nav ul li a:hover {
-  background-color: #555;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Hero Section */
+/* Hero Section avec Image de Fond */
 .wrap {
   position: relative;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  height: 100vh; /* Toute la hauteur de l'écran */
+  
+  /* C'EST ICI QUE TOUT SE PASSE POUR L'IMAGE */
+  background-image: url('background-crown.png'); /* Le nom de ton image */
+  background-size: cover; /* Couvre tout l'espace proprement */
+  background-position: center; /* Centre l'image */
+  background-repeat: no-repeat;
+  
+  display: flex; /* Aide à centrer le texte */
+  justify-content: center;
+  align-items: center;
 }
 
-/* Video full screen */
-#bg-video {
-  position: fixed;
+/* Overlay sombre pour faire ressortir le texte sur l'image */
+.wrap::before {
+  content: '';
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: -1; /* باش المحتوى يبان فوق الفيديو */
+  background-color: rgba(0, 0, 0, 0.3); /* Un voile noir léger */
 }
 
-/* Overlay content */
+/* Overlay content (Texte centré) */
 .label {
   position: relative;
-  z-index: 1;
+  z-index: 1; /* Passe au-dessus de l'overlay sombre */
   text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
   color: white;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
 }
 
 .label .block {
   font-size: 45px;
-  font-weight: bold;
-  letter-spacing: 3px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .label .small {
-  font-size: 50px;
+  font-size: 60px; /* Plus grand pour l'élégance */
+  font-weight: 800;
   color: var(--white);
+  margin-top: 10px;
 }
 
-/* Button */
+/* Button DECOUVRIR */
 .label a {
   display: inline-block;
-  margin-top: 25px;
-  padding: 12px 30px;
-  background: var(--black);
+  margin-top: 40px;
+  padding: 15px 40px;
+  background: transparent;
   color: white;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 5px;
-  transition: 0.3s;
+  border-radius: 0; /* Bords carrés pour le luxe */
+  border: 2px solid white; /* Un bouton contour */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.4s;
 }
 
 .label a:hover {
-  background: var(--red-dark);
+  background: white;
+  color: var(--black);
+  text-shadow: none;
 }
 
-/* Footer */
+/* Footer (Simplifié et propre) */
 .footer {
   background: var(--red-footer);
   color: white;
-  padding: 60px 40px;
+  padding: 80px 40px;
+  text-align: center;
 }
 
 .footer-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footer-col h3 {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-col p {
+  font-weight: 300;
+  line-height: 1.6;
+  font-size: 15px;
 }
 
 .footer-col ul {
@@ -137,60 +163,31 @@ nav ul li a:hover {
 }
 
 .footer-col ul li {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .footer-col ul li a {
-  color: white;
+  color: rgba(255,255,255,0.8);
   text-decoration: none;
+  font-size: 15px;
 }
 
 .footer-col ul li a:hover {
+  color: white;
   text-decoration: underline;
 }
 
-.newsletter {
-  display: flex;
-  margin-top: 10px;
+.copyright {
+  margin-top: 60px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
 }
 
-.newsletter input {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 5px 0 0 5px;
-}
-
-.newsletter button {
-  padding: 10px 15px;
-  border: none;
-  background: white;
-  cursor: pointer;
-  border-radius: 0 5px 5px 0;
-}
-
-.scroll-top {
-  width: 40px;
-  height: 40px;
-  background: white;
-  color: var(--red-dark);
-  text-align: center;
-  line-height: 40px;
-  margin: 40px auto 0;
-  border-radius: 5px;
-}
-
-.scroll-top a {
-  text-decoration: none;
-  color: var(--red-dark);
-  font-weight: bold;
-}
 </style>
 </head>
 
 <body>
 
-<!-- Navbar -->
 <nav>
   <ul>
     <li><a href="tajriba.html">Accueil</a></li>
@@ -200,14 +197,7 @@ nav ul li a:hover {
   </ul>
 </nav>
 
-<!-- Hero Section -->
 <div class="wrap">
-  <!-- Video background -->
-<video autoplay muted loop playsinline id="bg-video">
-  <source src="C:\Users\PC\OneDrive\Nouveahtmlu dossier\vedeo.html\bg-video.mp4.mp4" type="video/mp4">
-</video>
-
-  <!-- Overlay content -->
   <div class="label">
     <div class="block">Chez</div>
     <div class="block small">Bijouterie Saloua</div>
@@ -215,23 +205,30 @@ nav ul li a:hover {
   </div>
 </div>
 
-<!-- Footer -->
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-col">
       <h3>Qui Sommes-Nous</h3>
       <p>
         Bienvenue à Bijouterie Saloua, votre univers de bijoux de luxe.
-        Nous renouvelons nos collections en Or 18 Carats selon les tendances.
+        Nous renouvelons nos collections en Or 18 Carats selon les dernières tendances mondiales.
       </p>
     </div>
 
     <div class="footer-col">
-      <h3>Liens</h3>
+      <h3>Liens Utiles</h3>
       <ul>
-        <li><a href="#">Search</a></li>
-        <li><a href="#">Conditions</a></li>
+        <li><a href="#">Recherche</a></li>
+        <li><a href="#">Conditions Générales</a></li>
+        <li><a href="#">Mentions Légales</a></li>
       </ul>
     </div>
+  </div>
+  
+  <div class="copyright">
+    &copy; 2024 Bijouterie Saloua. Tous droits réservés.
+  </div>
+</footer>
 
-    
+</body>
+</html>
