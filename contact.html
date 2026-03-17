@@ -3,95 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bijouterie Saloua | Accueil</title>
+    <title>Contact | Bijouterie Salwa</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --black: #000;
             --white: #fff;
-            --beige-gold: #f1e5d3; /* Lon l'beige dyalk */
+            --beige-gold: #f1e5d3;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--black); color: var(--white); overflow-x: hidden; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
 
         /* Navbar Beige Gold */
         header {
             position: fixed;
-            top: 0; width: 100%; display: flex; justify-content: space-between;
-            align-items: center; padding: 20px 50px; z-index: 100;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            z-index: 100;
             background-color: var(--beige-gold);
         }
-        .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; letter-spacing: 2px; color: var(--black); }
-        nav ul { display: flex; list-style: none; gap: 30px; }
-        nav ul li a { text-decoration: none; color: var(--black); text-transform: uppercase; font-size: 12px; font-weight: 600; letter-spacing: 1px; }
 
-        /* Hero Section b l'image dyal l'crown */
-        .hero {
-            position: relative; height: 100vh; width: 100%; display: flex;
-            flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; 
-            /* Hna drna l'image li sifti liya */
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('background-crown.png');
-            background-size: cover; background-position: center;
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--black);
         }
-        .main-title { 
-            font-family: 'Playfair Display', serif; 
-            font-size: clamp(40px, 8vw, 85px); 
-            text-transform: uppercase; 
-            font-weight: 900; 
-            line-height: 1.1;
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--black);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            margin-top: 150px;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contact-container h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 50px);
+            margin-bottom: 20px;
             color: var(--beige-gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
-        .subtitle { font-size: 18px; margin-top: 20px; letter-spacing: 3px; font-weight: 300; text-transform: uppercase; }
-        
-        .btn-discover { 
-            margin-top: 40px; display: inline-block; padding: 18px 45px; 
-            border: 2px solid var(--beige-gold); color: var(--beige-gold); 
-            text-decoration: none; text-transform: uppercase; font-weight: 600;
-            transition: 0.4s; font-size: 13px; letter-spacing: 2px;
-        }
-        .btn-discover:hover { background: var(--beige-gold); color: var(--black); }
 
-        /* Footer Beige Gold */
-        .footer { background-color: var(--beige-gold); color: var(--black); padding: 60px 40px; margin-top: 0; }
-        .footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
-        .footer-col h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; text-transform: uppercase; font-size: 20px; }
+        .contact-info {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #ccc;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        /* Formulaire */
+        form {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--beige-gold);
+            font-weight: 600;
+        }
+
+        input, textarea {
+            background: transparent;
+            border: 1px solid rgba(241, 229, 211, 0.3);
+            padding: 15px;
+            color: white;
+            font-size: 14px;
+            transition: 0.4s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--beige-gold);
+            background: rgba(241, 229, 211, 0.05);
+        }
+
+        .btn-send {
+            background-color: var(--beige-gold);
+            color: var(--black);
+            padding: 18px;
+            border: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.4s;
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        .btn-send:hover {
+            background-color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--beige-gold);
+            color: var(--black);
+            padding: 60px 40px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 20px; }
+            nav ul { gap: 15px; }
+            nav ul li a { font-size: 10px; }
+        }
     </style>
 </head>
 <body>
+
     <header>
-        <div class="logo">BIJOUTERIE SALOUA</div>
+        <div class="logo">BIJOUTERIE SALWA</div>
         <nav>
             <ul>
                 <li><a href="tajriba.html">ACCUEIL</a></li>
                 <li><a href="apropos.html">À PROPOS</a></li>
-                <li><a href="decouvrir.html">SERVICES</a></li>
+                <li><a href="bijoux.html">COLLECTION</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1 class="main-title">BIJOUTERIE <br> SALOUA</h1>
-        <p class="subtitle">L'éclat de l'or 18 carats</p>
-        <a href="decouvrir.html" class="btn-discover">Découvrir la collection</a>
+    <section class="contact-container">
+        <h1>Contactez-nous</h1>
+        <div class="contact-info">
+            <p>Une question sur nos bijoux en Or 18 carats ou une commande spéciale ? <br> Notre équipe est à votre disposition.</p>
+        </div>
+
+        <form>
+            <div class="input-group">
+                <label>Nom complet</label>
+                <input type="text" placeholder="Entrez votre nom">
+            </div>
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" placeholder="votre@email.com">
+            </div>
+            <div class="input-group">
+                <label>Message</label>
+                <textarea rows="6" placeholder="Comment pouvons-nous vous aider ?"></textarea>
+            </div>
+            <button type="submit" class="btn-send">Envoyer le message</button>
+        </form>
     </section>
 
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
-                <h3>Qui Sommes-Nous</h3>
-                <p>Excellence, tradition et modernité réunies dans chaque création.</p>
+                <h3>Bijouterie Salwa</h3>
+                <p>L'excellence de l'artisanat marocain et le luxe de l'or.</p>
             </div>
             <div class="footer-col">
-                <h3>Suivez-nous</h3>
-                <p>Instagram | Facebook</p>
+                <h3>Réseaux Sociaux</h3>
+                <p>Instagram: @BijouterieSalwa</p>
+                <p>WhatsApp: +212 6XX XX XX XX</p>
             </div>
             <div class="footer-col">
-                <h3>Contact</h3>
-                <p>contact@saloua-bijoux.com</p>
+                <h3>Localisation</h3>
+                <p>Maroc - Livraison partout dans le Royaume.</p>
             </div>
         </div>
     </footer>
+
 </body>
 </html>
