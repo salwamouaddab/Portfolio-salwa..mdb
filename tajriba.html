@@ -3,62 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bijouterie Saloua | Accueil</title>
+    <title>À Propos | Bijouterie Saloua</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --black: #000;
             --white: #fff;
-            --beige-gold: #f1e5d3; /* Lon l'beige dyalk */
+            --beige-gold: #f1e5d3; /* Lon li khtariyti exact */
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--black); color: var(--white); overflow-x: hidden; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
 
         /* Navbar Beige Gold */
         header {
             position: fixed;
-            top: 0; width: 100%; display: flex; justify-content: space-between;
-            align-items: center; padding: 20px 50px; z-index: 100;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            z-index: 100;
             background-color: var(--beige-gold);
         }
-        .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; letter-spacing: 2px; color: var(--black); }
-        nav ul { display: flex; list-style: none; gap: 30px; }
-        nav ul li a { text-decoration: none; color: var(--black); text-transform: uppercase; font-size: 12px; font-weight: 600; letter-spacing: 1px; }
 
-        /* Hero Section b l'image dyal l'crown */
-        .hero {
-            position: relative; height: 100vh; width: 100%; display: flex;
-            flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; 
-            /* Hna drna l'image li sifti liya */
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('background-crown.png');
-            background-size: cover; background-position: center;
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--black);
         }
-        .main-title { 
-            font-family: 'Playfair Display', serif; 
-            font-size: clamp(40px, 8vw, 85px); 
-            text-transform: uppercase; 
-            font-weight: 900; 
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--black);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Content Section */
+        .content-section {
+            margin-top: 150px;
+            padding: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            min-height: 80vh;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+        }
+
+        .about-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 60px;
+            margin-bottom: 30px;
             line-height: 1.1;
             color: var(--beige-gold);
         }
-        .subtitle { font-size: 18px; margin-top: 20px; letter-spacing: 3px; font-weight: 300; text-transform: uppercase; }
-        
-        .btn-discover { 
-            margin-top: 40px; display: inline-block; padding: 18px 45px; 
-            border: 2px solid var(--beige-gold); color: var(--beige-gold); 
-            text-decoration: none; text-transform: uppercase; font-weight: 600;
-            transition: 0.4s; font-size: 13px; letter-spacing: 2px;
+
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.8;
+            font-weight: 300;
+            color: #ccc;
+            margin-bottom: 20px;
         }
-        .btn-discover:hover { background: var(--beige-gold); color: var(--black); }
+
+        /* Itar dyal tsswira */
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            border: 3px solid var(--beige-gold); 
+            padding: 15px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
         /* Footer Beige Gold */
-        .footer { background-color: var(--beige-gold); color: var(--black); padding: 60px 40px; margin-top: 0; }
-        .footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
-        .footer-col h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; text-transform: uppercase; font-size: 20px; }
+        .footer {
+            background-color: var(--beige-gold);
+            color: var(--black);
+            padding: 60px 40px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
+
     <header>
         <div class="logo">BIJOUTERIE SALOUA</div>
         <nav>
@@ -71,27 +149,34 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <h1 class="main-title">BIJOUTERIE <br> SALOUA</h1>
-        <p class="subtitle">L'éclat de l'or 18 carats</p>
-        <a href="decouvrir.html" class="btn-discover">Découvrir la collection</a>
+    <section class="content-section">
+        <div class="about-text">
+            <h1>NOTRE <br> HISTOIRE</h1>
+            <p>
+                Bienvenue dans l'univers de la <strong>Bijouterie Saloua</strong>. Passionnés par l'éclat et l'excellence, nous sélectionnons pour vous les pièces les plus raffinées en Or 18 carats.
+            </p>
+            <p>
+                Chaque bijou raconte une histoire, chaque éclat reflète une émotion. Nous allions tradition et modernité pour sublimer votre quotidien.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="" alt="Bijouterie Saloua Luxe">
+        </div>
     </section>
 
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
                 <h3>Qui Sommes-Nous</h3>
-                <p>Excellence, tradition et modernité réunies dans chaque création.</p>
-            </div>
-            <div class="footer-col">
-                <h3>Suivez-nous</h3>
-                <p>Instagram | Facebook</p>
+                <p>Votre univers de bijoux de luxe au Maroc. Excellence et authenticité.</p>
             </div>
             <div class="footer-col">
                 <h3>Contact</h3>
-                <p>contact@saloua-bijoux.com</p>
+                <p>Email: contact@saloua-bijoux.com</p>
+                <p>Maroc</p>
             </div>
         </div>
     </footer>
+
 </body>
 </html>
