@@ -1,114 +1,244 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Bijoux</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Collections | Bijouterie Saloua</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --black: #000;
+            --white: #fff;
+            --beige-gold: #f1e5d3; /* Lon beige gold dyalk */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Navbar Beige Gold */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            z-index: 100;
+            background-color: var(--beige-gold);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--black);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--black);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Top Bar Info */
+        .top-info {
+            margin-top: 100px;
+            background-color: rgba(241, 229, 211, 0.1);
+            color: var(--beige-gold);
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(241, 229, 211, 0.2);
+        }
+
+        /* Container & Cards */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 50px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: transparent;
+            border: 1px solid var(--beige-gold); /* Itar beige gold */
+            overflow: hidden;
+            transition: 0.5s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(241, 229, 211, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+            transition: 0.5s;
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card p {
+            padding: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            color: var(--black);
+            background: var(--beige-gold); /* Fond beige pour le texte */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Footer Beige Gold */
+        .footer {
+            background-color: var(--beige-gold);
+            color: var(--black);
+            padding: 60px 40px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
-<style>
-    * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-body {
-  background: #f6f6f6;
-  padding: 40px;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
-.card {
-  background: #fff;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  transition: 0.4s ease;
-  cursor: pointer;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-.card img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-}
-
-.card p {
-  padding: 15px;
-  font-size: 16px;
-  font-weight: 500;
-  text-align: center;
-  color: #333;
-  background: #fafafa;
-}
-.top-bar {
-    background-color:var(--beige-gold);
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-}
-
-
-
-</style>
 <body>
-  <div class="top-bar">
-    Livraison gratuite pour les commandes à partir de 499 dh
-</div>
 
-<section class="container">
+    <header>
+        <div class="logo">BIJOUTERIE SALOUA</div>
+        <nav>
+            <ul>
+                <li><a href="tajriba.html">ACCUEIL</a></li>
+                <li><a href="apropos.html">À PROPOS</a></li>
+                <li><a href="decouvrir.html">SERVICES</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <div class="card">
-    <a href="coulier.html" target="_self"><img src="c:\Users\PC\Downloads\WhatsApp Image 2025-12-20 at 01.19.09.jpeg" alt="Collier"></a>
-    <p>Les colliers →</p>
-  </div>
+    <div class="top-info">
+        LIVRAISON GRATUITE POUR LES COMMANDES À PARTIR DE 499 DH
+    </div>
 
-  <div class="card">
-    <a href="bijoux.html" target="_self"><img src="c:\Users\PC\Downloads\WhatsApp Image 2025-12-19 at 23.41.35.jpeg" alt="Bracelet"></a>
-    
-    <p>Bracelets →</p>
-  </div>
+    <section class="container">
 
-  <div class="card">
-   <a href="khwatam.html" target="_self"> <img src="https://bijouterielaila.com/cdn/shop/collections/bagues_1200x1200.jpg?v=1590944022" alt="Bagues"></a>
-    <p>Bagues →</p>
-  </div>
+        <div class="card">
+            <a href="coulier.html">
+                <img src="c:\Users\PC\Downloads\WhatsApp Image 2025-12-20 at 01.19.09.jpeg" alt="Collier">
+                <p>Les colliers →</p>
+            </a>
+        </div>
 
-  <div class="card">
-   <a href="boucle.html" target="_self"> <img src="https://assets.catawiki.com/image/cw_ldp_l/plain/assets/catawiki/assets/2025/12/9/3/2/0/320d621f-4d54-4f4f-a6bf-baee5469e9da.jpg" alt="Boucle"></a>
-    <p>Boucles chic →</p>
-  </div>
-  <div class="card">
-    
-     <a href="fildame.html" target="_self"><img src="https://i.etsystatic.com/7785719/r/il/c6a4bc/6504104777/il_800x800.6504104777_hxfj.jpg" alt="Dhaz"></a>
-      <p>Fil d'ame →</p>
-  </div>
-  <div class="card">
-    <a href="mdama.html" target="_self"><img src="https://www.rafinity.co.ma/wp-content/uploads/2019/03/ceinture-traditionnelle-incontournable.jpg" alt="Dhaz"></a>
-      <p>mdama →</p>
-   
-  </div>
-  <div class="card">
-    <a href="broch.html" target="_self"><img src="https://a.1stdibscdn.com/two-tone-gold-781-ctw-diamond-flower-statement-brooch-pendant-two-use-for-sale-picture-10/j_16442/j_157673721652656205977/IMG_8606_master.jpeg" alt="Dhaz"></a>
-      <p>broche →</p>
-  </div>
-  <div class="card">
-    <a href="khaytero.html" target="_self"><img src="https://th.bing.com/th?id=OIF.R8zLVqHqXzgXMs%2FlCvHYQA&cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Dhaz"></a>
-      <p>braclelets de cheville→ →</p>
-  </div>
+        <div class="card">
+            <a href="bijoux.html">
+                <img src="c:\Users\PC\Downloads\WhatsApp Image 2025-12-19 at 23.41.35.jpeg" alt="Bracelet">
+                <p>Bracelets →</p>
+            </a>
+        </div>
 
-</section>
+        <div class="card">
+            <a href="khwatam.html">
+                <img src="https://bijouterielaila.com/cdn/shop/collections/bagues_1200x1200.jpg?v=1590944022" alt="Bagues">
+                <p>Bagues →</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="boucle.html">
+                <img src="https://assets.catawiki.com/image/cw_ldp_l/plain/assets/catawiki/assets/2025/12/9/3/2/0/320d621f-4d54-4f4f-a6bf-baee5469e9da.jpg" alt="Boucle">
+                <p>Boucles chic →</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="fildame.html">
+                <img src="https://i.etsystatic.com/7785719/r/il/c6a4bc/6504104777/il_800x800.6504104777_hxfj.jpg" alt="Dhaz">
+                <p>Fil d'ame →</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="mdama.html">
+                <img src="https://www.rafinity.co.ma/wp-content/uploads/2019/03/ceinture-traditionnelle-incontournable.jpg" alt="Dhaz">
+                <p>Mdama →</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="broch.html">
+                <img src="https://a.1stdibscdn.com/two-tone-gold-781-ctw-diamond-flower-statement-brooch-pendant-two-use-for-sale-picture-10/j_16442/j_157673721652656205977/IMG_8606_master.jpeg" alt="Dhaz">
+                <p>Broche →</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="khaytero.html">
+                <img src="https://th.bing.com/th?id=OIF.R8zLVqHqXzgXMs%2FlCvHYQA&cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Dhaz">
+                <p>Bracelets de cheville →</p>
+            </a>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Bijouterie Saloua</h3>
+                <p>Excellence et Or 18 Carats. Votre destination luxe au Maroc.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Aide</h3>
+                <p>Livraison & Retours</p>
+                <p>Guide des tailles</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
