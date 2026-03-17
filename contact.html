@@ -1,241 +1,212 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact · Arenasstore (exemple)</title>
-  <style>
-    :root{
-      --max-w: 900px;
-      --accent: #111; /* bouton noir */
-      --muted: #7a7a7a;
-      --border: #d6d6d6;
-      --bg: #fff;
-      --radius: 3px;
-      --gap: 18px;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Bijouterie Saloua</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --black: #000;
+            --white: #fff;
+            --beige-gold: #f1e5d3;
+        }
 
-    body{
-      margin:0;
-      background: #fafafa;
-      color:#111;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .container{
-      max-width: var(--max-w);
-      margin: 28px auto;
-      padding: 18px;
-      background: var(--bg);
-    }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
 
-    header.topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding: 8px 0 22px;
-    }
-    .brand{
-      font-size:22px;
-      letter-spacing:1px;
-      color: #222;
-    }
+        /* Navbar Beige Gold */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            z-index: 100;
+            background-color: var(--beige-gold);
+        }
 
-    h1.page-title{
-      font-size:42px;
-      margin: 6px 0 26px;
-      font-weight:500;
-    }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--black);
+        }
 
-    form.contact-form{
-      display:flex;
-      flex-direction:column;
-      gap: var(--gap);
-    }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
 
-    .field{
-      display:block;
-    }
+        nav ul li a {
+            text-decoration: none;
+            color: var(--black);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
 
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    textarea{
-      width:100%;
-      box-sizing: border-box;
-      padding: 16px;
-      border: 2px solid var(--border);
-      border-radius: 4px;
-      font-size:16px;
-      outline: none;
-      transition: border-color .15s, box-shadow .15s;
-      background: #fff;
-      resize: vertical;
-    }
+        /* Contact Section */
+        .contact-container {
+            margin-top: 150px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 80vh;
+        }
 
-    input::placeholder,
-    textarea::placeholder{
-      color: #999;
-    }
+        .contact-container h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: var(--beige-gold);
+            text-transform: uppercase;
+        }
 
-    input:focus,
-    textarea:focus{
-      border-color: #999;
-      box-shadow: 0 0 0 4px rgba(0,0,0,0.02);
-    }
+        .contact-info {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #ccc;
+        }
 
-    .btn-row{
-      margin-top: 6px;
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
+        /* Formulaire */
+        form {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-    button.send{
-      background: var(--accent);
-      color: #fff;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-      font-weight:600;
-      letter-spacing:.2px;
-    }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
 
-    button.send:active{ transform: translateY(1px); }
+        label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--beige-gold);
+        }
 
-    /* subscribe area */
-    .subscribe {
-      margin-top: 44px;
-      text-align:center;
-      padding: 34px 16px;
-      border-top: 1px solid #eee;
-    }
-    .subscribe h3{
-      margin:0 0 14px;
-      color: #444;
-      font-weight:500;
-      font-size:18px;
-    }
-    .subscribe .subwrap{
-      max-width:480px;
-      margin: 0 auto;
-      display:flex;
-      gap:8px;
-    }
-    .subscribe input[type="email"]{
-      padding: 12px 14px;
-      border: 2px solid var(--border);
-      border-radius: 3px;
-      flex:1;
-      font-size:16px;
-    }
-    .subscribe button {
-      border: 2px solid var(--border);
-      background: transparent;
-      padding: 10px 14px;
-      border-radius: 3px;
-      cursor:pointer;
-      font-size:18px;
-    }
+        input, textarea {
+            background: transparent;
+            border: 1px solid var(--beige-gold);
+            padding: 15px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            transition: 0.3s;
+        }
 
-    footer{
-      margin-top: 30px;
-      padding: 18px 0 40px;
-      color: var(--muted);
-      text-align:center;
-      font-size:13px;
-    }
+        input:focus, textarea:focus {
+            outline: none;
+            background: rgba(241, 229, 211, 0.05);
+        }
 
-    /* floating whatsapp button */
-    .whatsapp-fab{
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      width:56px;
-      height:56px;
-      border-radius: 50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background: linear-gradient(180deg,#18a54a,#0b8f3b);
-      box-shadow: 0 6px 18px rgba(11, 130, 62, .25);
-      z-index: 9999;
-    }
-    .whatsapp-fab a{
-      display:block;
-      width:100%;
-      height:100%;
-      text-decoration:none;
-      color:#fff;
-      font-weight:700;
-      font-size:22px;
-      line-height:56px;
-    }
+        .btn-send {
+            background-color: var(--beige-gold);
+            color: var(--black);
+            padding: 15px;
+            border: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.4s;
+            margin-top: 10px;
+        }
 
-    /* responsive */
-    @media (max-width:520px){
-      h1.page-title{ font-size:34px; }
-      .container{ margin: 12px; padding: 12px; }
-      .subscribe .subwrap{ flex-direction:column; gap:10px; }
-      .whatsapp-fab{ width:50px; height:50px; }
-    }
-  </style>
+        .btn-send:hover {
+            background-color: var(--white);
+            letter-spacing: 2px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--beige-gold);
+            color: var(--black);
+            padding: 60px 40px;
+            margin-top: 80px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
-  <div class="container" role="main">
-    <header class="topbar" aria-label="site header">
-      <div class="brand">arenasstore</div>
-      <nav aria-label="main menu">
-        <!-- ici tu peux mettre icone menu / recherche -->
-      </nav>
+
+    <header>
+        <div class="logo">BIJOUTERIE SALOUA</div>
+        <nav>
+            <ul>
+                <li><a href="tajriba.html">ACCUEIL</a></li>
+                <li><a href="apropos.html">À PROPOS</a></li>
+                <li><a href="decouvrir.html">SERVICES</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <h1 class="page-title">Contact</h1>
+    <section class="contact-container">
+        <h1>Contactez-nous</h1>
+        <div class="contact-info">
+            <p>Une question ? Un projet sur mesure ?</p>
+            <p>Nous sommes à votre écoute pour vous conseiller.</p>
+        </div>
 
-    <form class="contact-form" action="#" method="post" novalidate>
-      <label class="field" for="name">
-        <input id="name" name="name" type="text" placeholder="Nom" autocomplete="name" />
-      </label>
-
-      <label class="field" for="email">
-        <input id="email" name="email" type="email" placeholder="E-mail *" required autocomplete="email" />
-      </label>
-
-      <label class="field" for="phone">
-        <input id="phone" name="phone" type="tel" placeholder="Numéro de téléphone" autocomplete="tel" />
-      </label>
-
-      <label class="field" for="message">
-        <textarea id="message" name="message" rows="6" placeholder="Commentaire"></textarea>
-      </label>
-
-      <div class="btn-row">
-        <button type="submit" class="send" aria-label="Envoyer le message">Envoyer</button>
-      </div>
-    </form>
-
-    <section class="subscribe" aria-label="subscribe">
-      <h3>Subscribe to our emails</h3>
-      <form class="subwrap" action="#" method="post" onsubmit="event.preventDefault(); alert('Merci — vous êtes inscrit(e)')">
-        <input type="email" name="newsletter" placeholder="E-mail" required />
-        <button type="submit" aria-label="S'abonner">→</button>
-      </form>
+        <form>
+            <div class="input-group">
+                <label>Nom complet</label>
+                <input type="text" placeholder="Votre nom...">
+            </div>
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" placeholder="votre@email.com">
+            </div>
+            <div class="input-group">
+                <label>Message</label>
+                <textarea rows="5" placeholder="Comment pouvons-nous vous aider ?"></textarea>
+            </div>
+            <button type="submit" class="btn-send">Envoyer le message</button>
+        </form>
     </section>
 
-    <footer>
-      © 2025, arenasstore Commerce électronique propulsé par Shopify
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Bijouterie Saloua</h3>
+                <p>Or 18 Carats & Bijoux de Prestige.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Réseaux Sociaux</h3>
+                <p>Instagram | Facebook</p>
+            </div>
+        </div>
     </footer>
-  </div>
-
-  <!-- WhatsApp floating button (change number) -->
-  <div class="whatsapp-fab" aria-hidden="false">
-    <a href="https://wa.me/212600000000" target="_blank" rel="noopener noreferrer" title="Contact via WhatsApp">💬</a>
-  </div>
 
 </body>
 </html>
