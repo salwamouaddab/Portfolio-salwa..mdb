@@ -1,223 +1,184 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Bijouterie Salwa</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos | Bijouterie Salwa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #000;
+            --white: #fff;
+            --beige-gold: #f1e5d3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0; width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 20px 50px; z-index: 100;
+            background-color: var(--beige-gold);
+        }
+        .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--black); letter-spacing: 2px; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav ul li a { text-decoration: none; color: var(--black); text-transform: uppercase; font-size: 12px; font-weight: 600; }
+
+        /* Hero Section */
+        .about-hero {
+            background-color: var(--beige-gold);
+            text-align: center;
+            padding: 120px 20px 60px;
+            color: var(--black);
+        }
+        .about-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+        .about-hero p { margin-top: 10px; font-size: 14px; letter-spacing: 2px; opacity: 0.8; }
+
+        /* Content Section */
+        .about-content {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            margin-bottom: 10px;
+            color: var(--beige-gold);
+        }
+        .about-text span {
+            color: var(--white);
+            letter-spacing: 4px;
+            font-size: 13px;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--beige-gold);
+            padding-bottom: 5px;
+        }
+        .about-text p { margin-top: 25px; line-height: 1.8; color: #ccc; font-weight: 300; }
+        .about-text strong { display: block; margin-top: 30px; font-size: 16px; color: var(--beige-gold); }
+
+        /* Image with Itar (Frame) */
+        .about-images {
+            border: 3px solid var(--beige-gold);
+            padding: 15px;
+            max-width: 450px;
+            margin: auto;
+        }
+        .about-images img { width: 100%; display: block; transition: 0.5s ease; }
+
+        /* Icons Section */
+        .about-icons {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .icon-box {
+            background: #111;
+            padding: 40px 25px;
+            border: 1px solid rgba(241, 229, 211, 0.1);
+            text-align: center;
+            transition: 0.4s ease;
+        }
+        .icon-box span { font-size: 35px; display: block; margin-bottom: 20px; }
+        .icon-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--beige-gold);
+        }
+        .icon-box p { font-size: 13px; color: #999; line-height: 1.6; }
+        .icon-box:hover { transform: translateY(-10px); border-color: var(--beige-gold); }
+
+        /* Footer */
+        .footer {
+            background-color: var(--beige-gold);
+            color: var(--black);
+            padding: 60px 40px;
+            margin-top: 50px;
+        }
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 900px) {
+            .about-content { grid-template-columns: 1fr; text-align: center; }
+            .about-icons { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
 </head>
-<style>
-
-    * {
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-body {
-  margin: 0;
-  background-color: #f8f8f8;
-}
-
-/* Hero */
-.about-hero {
-  background-color: #f3efe9;
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.about-hero h1 {
-  margin: 0;
-  font-size: 42px;
-  letter-spacing: 2px;
-}
-
-.about-hero p {
-  margin-top: 10px;
-  color: #777;
-}
-
-/* Content */
-.about-content {
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.about-text h2 {
-  font-size: 32px;
-  margin-bottom: 5px;
-}
-
-.about-text span {
-  color: #b89b5e;
-  letter-spacing: 3px;
-  font-size: 13px;
-}
-
-.about-text p {
-  margin-top: 20px;
-  line-height: 1.8;
-  color: #555;
-}
-
-.about-text strong {
-  display: block;
-  margin-top: 25px;
-  font-size: 16px;
-}
-
-/* Images */
-.about-images {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.about-images img {
-  width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  transition: transform 0.4s ease;
-}
-
-.about-images img:hover {
-  transform: scale(1.05);
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .about-content {
-    grid-template-columns: 1fr;
-  }
-
-  .about-hero h1 {
-    font-size: 32px;
-  }
-}
-.about-icons {
-  max-width: 1200px;
-  margin: 80px auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  text-align: center;
-}
-
-.icon-box {
-  background: #ffffff;
-  padding: 40px 25px;
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.icon-box span {
-  font-size: 40px;
-  display: block;
-  margin-bottom: 20px;
-}
-
-.icon-box h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #2c2c2c;
-}
-
-.icon-box p {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.6;
-}
-
-.icon-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .about-icons {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 500px) {
-  .about-icons {
-    grid-template-columns: 1fr;
-  }
-}
-.about-images {
-  max-width: 500px;
-  margin: auto;
-}
-</style>
 <body>
 
+<header>
+    <div class="logo">BIJOUTERIE SALWA</div>
+    <nav>
+        <ul>
+            <li><a href="tajriba.html">ACCUEIL</a></li>
+            <li><a href="apropos.html">À PROPOS</a></li>
+            <li><a href="bijoux.html">COLLECTION</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
+
 <section class="about-hero">
-  <h1>About Us</h1>
-  <p>Accueil › About Us</p>
+    <h1>About Us</h1>
+    <p>Accueil › Bijouterie Salwa</p>
 </section>
 
 <section class="about-content">
-  <div class="about-text">
-    <h2>Bijouterie Salwa</h2>
-    <span>Élégance & Raffinement</span>
-
-    <p>
-      Bijouterie Salwa est une boutique spécialisée dans les bijoux féminins,
-      alliant élégance, modernité et qualité. Chaque pièce est soigneusement
-      sélectionnée pour sublimer votre style au quotidien ou lors de vos
-      occasions spéciales.
-    </p>
-
-    <p>
-      Nous proposons une collection raffinée de colliers, bagues, bracelets
-      et boucles d’oreilles, avec une attention particulière portée aux détails
-      et à l’accessibilité des prix.
-    </p>
-
-    <p>
-      Notre objectif est de vous offrir une expérience d’achat 100% en ligne,
-      simple, sécurisée et agréable, accompagnée d’un service client réactif
-      et d’une livraison rapide partout au Maroc.
-    </p>
-
-    <strong>✨ Bijouterie Salwa – Parce que l’élégance commence par un bijou.</strong>
-  </div>
-
- <div class="about-images">
-  <img src="https://i.pinimg.com/736x/e0/8b/64/e08b642c01a24cefecb5f15275a7c496.jpg" alt="Bijouterie Salwa">
-</div>
+    <div class="about-text">
+        <h2>Bijouterie Salwa</h2>
+        <span>Élégance & Raffinement</span>
+        <p>Bijouterie Salwa est une boutique spécialisée dans les bijoux féminins, alliant élégance, modernité et qualité.</p>
+        <p>Nous proposons une collection raffinée de colliers, bagues et bracelets, avec une attention particulière portée aux détails.</p>
+        <strong>✨ Parce que l’élégance commence par un bijou.</strong>
+    </div>
+    <div class="about-images">
+        <img src="https://i.pinimg.com/736x/e0/8b/64/e08b642c01a24cefecb5f15275a7c496.jpg" alt="Bijouterie Salwa">
+    </div>
 </section>
+
 <section class="about-icons">
-  <div class="icon-box">
-    <span>💎</span>
-    <h3>Qualité Premium</h3>
-    <p>Bijoux soigneusement sélectionnés avec une finition élégante.</p>
-  </div>
-
-  <div class="icon-box">
-    <span>🚚</span>
-    <h3>Livraison Rapide</h3>
-    <p>Livraison partout au Maroc dans les meilleurs délais.</p>
-  </div>
-
-  <div class="icon-box">
-    <span>📞</span>
-    <h3>Service Client</h3>
-    <p>Une équipe à votre écoute pour vous accompagner.</p>
-  </div>
-
-  <div class="icon-box">
-    <span>✨</span>
-    <h3>Style Intemporel</h3>
-    <p>Des bijoux modernes et raffinés pour chaque occasion.</p>
-  </div>
+    <div class="icon-box"><span>💎</span><h3>Qualité Premium</h3><p>Bijoux soigneusement sélectionnés.</p></div>
+    <div class="icon-box"><span>🚚</span><h3>Livraison Rapide</h3><p>Partout au Maroc.</p></div>
+    <div class="icon-box"><span>📞</span><h3>Service Client</h3><p>À votre écoute 7j/7.</p></div>
+    <div class="icon-box"><span>✨</span><h3>Style Chic</h3><p>Moderne et intemporel.</p></div>
 </section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col"><h3>Bijouterie Salwa</h3><p>Votre destination luxe au Maroc.</p></div>
+        <div class="footer-col"><h3>Contact</h3><p>contact@saloua-bijoux.com</p></div>
+    </div>
+</footer>
 
 </body>
 </html>
